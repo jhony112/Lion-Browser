@@ -35,19 +35,21 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.MenuItem();
             this.closeAllButThisToolStripMenuItem = new System.Windows.Forms.MenuItem();
             this.closeTabToolStripMenuItem = new System.Windows.Forms.MenuItem();
+            this.imagelist = new System.Windows.Forms.ImageList(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.monoFlat_ThemeContainer1 = new MonoFlat_ThemeContainer();
+            this.MainTab = new KRBTabControl.KRBTabControl();
+            this.tabPageEx3 = new KRBTabControl.TabPageEx();
+            this.tabPageEx1 = new KRBTabControl.TabPageEx();
             this.monoFlat_Button1 = new MonoFlat_Button();
             this.monoFlat_HeaderLabel1 = new MonoFlat_HeaderLabel();
             this.Maxbtn = new Ambiance.Ambiance_Button_1();
             this.closebtn = new Ambiance.Ambiance_Button_1();
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
-            this.ambiance_TabControl1 = new Ambiance.Ambiance_TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.eachtab1 = new LiOnBrowser.Eachtab();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.monoFlat_ThemeContainer1.SuspendLayout();
-            this.ambiance_TabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.MainTab.SuspendLayout();
+            this.tabPageEx3.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -86,15 +88,33 @@
             this.closeTabToolStripMenuItem.Text = "Close tab";
             this.closeTabToolStripMenuItem.Click += new System.EventHandler(this.closeTabToolStripMenuItem_Click);
             // 
+            // imagelist
+            // 
+            this.imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imagelist.ImageStream")));
+            this.imagelist.TransparentColor = System.Drawing.Color.Transparent;
+            this.imagelist.Images.SetKeyName(0, "01.ico");
+            this.imagelist.Images.SetKeyName(1, "2.ico");
+            this.imagelist.Images.SetKeyName(2, "3.ico");
+            this.imagelist.Images.SetKeyName(3, "4.ico");
+            this.imagelist.Images.SetKeyName(4, "5.ico");
+            this.imagelist.Images.SetKeyName(5, "6.ico");
+            this.imagelist.Images.SetKeyName(6, "7.ico");
+            this.imagelist.Images.SetKeyName(7, "8.ico");
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // monoFlat_ThemeContainer1
             // 
             this.monoFlat_ThemeContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
+            this.monoFlat_ThemeContainer1.Controls.Add(this.MainTab);
             this.monoFlat_ThemeContainer1.Controls.Add(this.monoFlat_Button1);
             this.monoFlat_ThemeContainer1.Controls.Add(this.monoFlat_HeaderLabel1);
             this.monoFlat_ThemeContainer1.Controls.Add(this.Maxbtn);
             this.monoFlat_ThemeContainer1.Controls.Add(this.closebtn);
             this.monoFlat_ThemeContainer1.Controls.Add(this.ambiance_Button_11);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.ambiance_TabControl1);
             this.monoFlat_ThemeContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.monoFlat_ThemeContainer1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.monoFlat_ThemeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -106,6 +126,63 @@
             this.monoFlat_ThemeContainer1.SmartBounds = true;
             this.monoFlat_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.monoFlat_ThemeContainer1.TabIndex = 0;
+            // 
+            // MainTab
+            // 
+            this.MainTab.AllowDrop = true;
+            this.MainTab.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.MainTab.BackgroundHatcher.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MainTab.BackgroundHatcher.ForeColor = System.Drawing.Color.Gainsboro;
+            this.MainTab.BackgroundHatcher.HatchStyle = "DiagonalBrick";
+            this.MainTab.BackgroundHatcher.HatchType = System.Drawing.Drawing2D.HatchStyle.DiagonalBrick;
+            this.MainTab.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainTab.BackgroundImage")));
+            this.MainTab.CaptionButtons.InactiveCaptionButtonsColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MainTab.CaptionRandomizer.Transparency = ((byte)(255));
+            this.MainTab.Controls.Add(this.tabPageEx3);
+            this.MainTab.Controls.Add(this.tabPageEx1);
+            this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MainTab.GradientCaption.InactiveCaptionColorEnd = System.Drawing.SystemColors.ActiveBorder;
+            this.MainTab.GradientCaption.InactiveCaptionColorStart = System.Drawing.SystemColors.ActiveBorder;
+            this.MainTab.GradientCaption.InactiveCaptionTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MainTab.HeaderStyle = KRBTabControl.KRBTabControl.TabHeaderStyle.Texture;
+            this.MainTab.ImageList = this.imagelist;
+            this.MainTab.IsDrawHeader = false;
+            this.MainTab.ItemSize = new System.Drawing.Size(0, 30);
+            this.MainTab.Location = new System.Drawing.Point(10, 70);
+            this.MainTab.Name = "MainTab";
+            this.MainTab.SelectedIndex = 0;
+            this.MainTab.Size = new System.Drawing.Size(1283, 654);
+            this.MainTab.TabGradient.ColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(3)))));
+            this.MainTab.TabGradient.ColorStart = System.Drawing.Color.Green;
+            this.MainTab.TabGradient.GradientStyle = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.MainTab.TabGradient.TabPageSelectedTextColor = System.Drawing.Color.White;
+            this.MainTab.TabGradient.TabPageTextColor = System.Drawing.Color.DimGray;
+            this.MainTab.TabHOffset = -2;
+            this.MainTab.TabIndex = 7;
+            this.MainTab.TabPageCloseIconColor = System.Drawing.Color.White;
+            this.MainTab.UpDownStyle = KRBTabControl.KRBTabControl.UpDown32Style.OfficeBlue;
+            // 
+            // tabPageEx3
+            // 
+            this.tabPageEx3.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPageEx3.Controls.Add(this.eachtab1);
+            this.tabPageEx3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tabPageEx3.Location = new System.Drawing.Point(1, 36);
+            this.tabPageEx3.Name = "tabPageEx3";
+            this.tabPageEx3.Size = new System.Drawing.Size(1281, 596);
+            this.tabPageEx3.TabIndex = 0;
+            this.tabPageEx3.Text = "Server Settings";
+            // 
+            // tabPageEx1
+            // 
+            this.tabPageEx1.BackColor = System.Drawing.Color.White;
+            this.tabPageEx1.Font = new System.Drawing.Font("Arial", 10F);
+            this.tabPageEx1.Location = new System.Drawing.Point(1, 36);
+            this.tabPageEx1.Name = "tabPageEx1";
+            this.tabPageEx1.Size = new System.Drawing.Size(1281, 596);
+            this.tabPageEx1.TabIndex = 1;
+            this.tabPageEx1.Text = "Schedules";
             // 
             // monoFlat_Button1
             // 
@@ -178,49 +255,14 @@
             this.ambiance_Button_11.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ambiance_Button_11.Click += new System.EventHandler(this.ambiance_Button_11_Click);
             // 
-            // ambiance_TabControl1
-            // 
-            this.ambiance_TabControl1.Controls.Add(this.tabPage2);
-            this.ambiance_TabControl1.Controls.Add(this.tabPage3);
-            this.ambiance_TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ambiance_TabControl1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ambiance_TabControl1.ItemSize = new System.Drawing.Size(80, 24);
-            this.ambiance_TabControl1.Location = new System.Drawing.Point(10, 70);
-            this.ambiance_TabControl1.Name = "ambiance_TabControl1";
-            this.ambiance_TabControl1.SelectedIndex = 0;
-            this.ambiance_TabControl1.Size = new System.Drawing.Size(1283, 654);
-            this.ambiance_TabControl1.TabIndex = 0;
-            this.ambiance_TabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ambiance_TabControl1_MouseDown);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage2.Controls.Add(this.eachtab1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1275, 622);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "tabPage2bbjbjbjb";
-            // 
             // eachtab1
             // 
             this.eachtab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eachtab1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.eachtab1.Location = new System.Drawing.Point(3, 3);
+            this.eachtab1.Location = new System.Drawing.Point(0, 0);
             this.eachtab1.Name = "eachtab1";
-            this.eachtab1.Size = new System.Drawing.Size(1269, 616);
+            this.eachtab1.Size = new System.Drawing.Size(1281, 596);
             this.eachtab1.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1275, 622);
-            this.tabPage3.TabIndex = 1;
-            this.tabPage3.Text = "tabPage3";
+            this.eachtab1.Load += new System.EventHandler(this.eachtab1_Load);
             // 
             // Form1
             // 
@@ -238,8 +280,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.monoFlat_ThemeContainer1.ResumeLayout(false);
             this.monoFlat_ThemeContainer1.PerformLayout();
-            this.ambiance_TabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.MainTab.ResumeLayout(false);
+            this.tabPageEx3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,14 +296,16 @@
 
 
         private MonoFlat_ThemeContainer monoFlat_ThemeContainer1;
-        private Ambiance.Ambiance_TabControl ambiance_TabControl1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private Ambiance.Ambiance_Button_1 ambiance_Button_11;
         private Ambiance.Ambiance_Button_1 Maxbtn;
         private Ambiance.Ambiance_Button_1 closebtn;
         private MonoFlat_HeaderLabel monoFlat_HeaderLabel1;
         private MonoFlat_Button monoFlat_Button1;
+        private System.Windows.Forms.ImageList imagelist;
+        private System.Windows.Forms.Timer timer1;
+        private KRBTabControl.KRBTabControl MainTab;
+        private KRBTabControl.TabPageEx tabPageEx3;
+        private KRBTabControl.TabPageEx tabPageEx1;
         private Eachtab eachtab1;
        
     }

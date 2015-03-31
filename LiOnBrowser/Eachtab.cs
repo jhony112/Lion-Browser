@@ -12,8 +12,7 @@ namespace LiOnBrowser
     public partial class Eachtab : UserControl
     {
         Form1 myparent;
-        Control controler;
-        TabPage misty;
+        
         System.IO.Stream s1 = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("LiOnBrowser.Resources.Nex64tdark.png");
         
         System.IO.Stream s2 = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("LiOnBrowser.Resources.Nex64t.png");
@@ -28,9 +27,8 @@ namespace LiOnBrowser
           //  back.Image = imageList1.Images[0];
            // Foward.Image = imageList1.Images[1];
 
-            myparent = (Form1)this.ParentForm;
-           controler = this.Parent;
-         misty = (TabPage)controler;
+            
+         
           
         }
 
@@ -106,14 +104,16 @@ namespace LiOnBrowser
 
         private void monoFlat_Button1_Click(object sender, EventArgs e)
         {
+            myparent = (Form1)this.ParentForm;
             Browser.Navigate(mainurl.Text);
-            timer1.Start();
+            myparent.animatetab();
         }
 
         private void mainurl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                MessageBox.Show("enter pressed");
                 monoFlat_Button1_Click(this, new EventArgs());
             }
         }

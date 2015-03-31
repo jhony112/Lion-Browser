@@ -22,7 +22,10 @@ namespace LiOnBrowser
             this.WindowState = FormWindowState.Maximized;
             //this.FormBorderStyle = FormBorderStyle.None;
         }
+         public void animatetab(){
 
+             timer1.Start();
+         }
         private void Form1_Load(object sender, EventArgs e)
         {
             //System.Reflection.Assembly thisExe;
@@ -68,20 +71,20 @@ namespace LiOnBrowser
 
         private void ambiance_TabControl1_MouseDown(object sender, MouseEventArgs e)
         { 
-            for (int i = 0; i < this.ambiance_TabControl1.TabPages.Count; i++)
-                {
-                    Rectangle r = ambiance_TabControl1.GetTabRect(i);
-                    //Getting the position of the "x" mark.
-                    Rectangle closeButton = new Rectangle(r.Right - 15, r.Top + 7, 9, 7);
-                    if (closeButton.Contains(e.Location))
-                    {
-                        if (MessageBox.Show("Would you like to Close this Tab?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            this.ambiance_TabControl1.TabPages.RemoveAt(i);
-                            break;
-                        }
-                    }
-                }
+            //for (int i = 0; i < this.TabControl1.TabPages.Count; i++)
+            //    {
+            //        Rectangle r = TabControl1.GetTabRect(i);
+            //        //Getting the position of the "x" mark.
+            //        Rectangle closeButton = new Rectangle(r.Right - 15, r.Top + 7, 9, 7);
+            //        if (closeButton.Contains(e.Location))
+            //        {
+            //            if (MessageBox.Show("Would you like to Close this Tab?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //            {
+            //                this.TabControl1.TabPages.RemoveAt(i);
+            //                break;
+            //          }
+                    
+                
             }
 
         private void ambiance_Button_11_Click(object sender, EventArgs e)
@@ -106,6 +109,26 @@ namespace LiOnBrowser
         private void closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        int mm = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (mm >= 8)
+            {
+                mm = 0;
+            } 
+            MainTab.SelectedTab.ImageIndex = mm;
+            mm += 1;
+        }
+
+        private void krbTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eachtab1_Load(object sender, EventArgs e)
+        {
+
         }
 
 
